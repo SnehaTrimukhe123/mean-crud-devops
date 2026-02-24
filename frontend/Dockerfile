@@ -5,12 +5,15 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build --prod
+
+# IMPORTANT: Angular 15 does NOT need --prod
+RUN npm run build
 
 # Stage 2 - Serve using nginx
 FROM nginx:alpine
 
-COPY --from=build /app/dist/frontend /usr/share/nginx/html
+# IMPORTANT: use correct folder name from dist
+COPY --from=build /app/dist/angular-15-crud /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
