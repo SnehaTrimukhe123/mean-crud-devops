@@ -27,10 +27,6 @@ You can modify the `src/app/services/tutorial.service.ts` file to adjust how the
 Navigate to `http://localhost:8081/`
 
 
-
-# 🚀 DevOps Implementation & Deployment
----
-
 # 🚀 DevOps Implementation & Deployment
 
 In this project, I have implemented complete DevOps practices to build and deploy the MEAN stack CRUD application on AWS cloud.
